@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tienda de Ropa</title>
   <link rel="stylesheet" href="./style.css">
+
+  <link rel="stylesheet" href="sweetalert2.min.css">
+
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 </head>
 
 <body>
@@ -16,7 +19,7 @@
         </div>
         <nav>
             <ul class="nav-links">
-                <li><a href="./productos.html">PRODUCTOS</a></li>
+                <li><a href="#">PRODUCTOS</a></li>
                 <li><a href="#">OFERTAS</a></li>
                 <li><a href="#">SOBRE NOSOTROS</a></li>
                 <li><a href="#">PREGUNTAS</a></li>   
@@ -26,106 +29,21 @@
     </header>
 
   <!--TARJETAS--> 
-<section class="conteiner">
-  <section class="card-conteiner">
-    <div class="card">
-      <div>
-        <img class="image-card" src="./img/remera-cara-feliz.jpg">
-      </div>
-      <div>
-        <h2>Camiseta</h2>
-        <p>Precio: $4500</p>
-        <input class="quantity" type="number" min="1" value="1">
-        <button class="btn" onclick="addToCart('Camiseta', 4500)">Agregar al Carrito</button>
-      </div>
-    </div>    
-  <div class="card">
-    <div>
-      <img class="image-card" src="./img/remera-quicksilver.jpeg">
-    </div>
-    <div>
-      <h2>Remera</h2>
-      <p>Precio: $4500</p>
-      <input class="quantity" type="number" min="1" value="1">
-      <button class="btn" onclick="addToCart('Remera', 4500)">Agregar al Carrito</button>
-    </div>
-  </div>
-  <div class="card">
-    <div>
-      <img class="image-card" src="./img/bandolera-nike.jpg">
-    </div>
-    <div>
-      <h2>Bandolera</h2>
-      <p>Precio: $9000</p>
-      <input class="quantity" type="number" min="1" value="1">
-      <button class="btn" onclick="addToCart('Bandolera', 9000)">Agregar al Carrito</button>
-    </div>
-  </div>
-  <div class="card">
-    <div>
-      <img class="image-card" src="./img/remera-volcom.png">
-    </div>
-    <div>
-      <h2>Remera Volcom</h2>
-      <p>Precio: $4500</p>
-      <input class="quantity" type="number" min="1" value="1">
-      <button class="btn" onclick="addToCart('Remera Volcom', 4500)">Agregar al Carrito</button>
-    </div>
-  </div>
-  <div class="card">
-    <div>
-      <img class="image-card" src="./img/bermuda-ripcurl.png">
-    </div>
-    <div>
-      <h2>Bermuda</h2>
-      <p>Precio: $8000</p>
-      <input class="quantity" type="number" min="1" value="1">
-      <button class="btn" onclick="addToCart('Bermuda', 8000)">Agregar al Carrito</button>
-    </div>
-  </div>
-  <div class="card">
-    <div>
-      <img class="image-card" src="./img/campera-rusty.jpg">
-    </div>
-    <div>
-      <h2>Campera</h2>
-      <p>Precio: $1200</p>
-      <input class="quantity" type="number" min="1" value="1">
-      <button class="btn" onclick="addToCart('Campera', 12000)">Agregar al Carrito</button>
-    </div>
-  </div>
-  </section>
-</section>
+  <div id="contenedor-productos" class="contenedor"></div>
 
-  
-  <!--CARRITO-->
-  <div class="box">
-  <div class="cart">
-    <h2>Carrito de Compras</h2>
-    <ul id="cart-items">
-      <!-- Elementos del carrito se agregan dinámicamente aquí -->
-    </ul>
-    <button class="btn" onclick="clearCart()">Vaciar Carrito</button>
-  </div>
+  <!--CARRITO--> 
+  <h2>Tus Compras</h2>
+  <div id="carrito-container"></div>
 
-  <!--FORMULARIO-->
-  
-  <div class="checkout-form">
-    <h2>Formulario de Compra</h2>
-    <input class="texto" type="text" id="name" placeholder="Nombre">
-    <input class="texto" type="email" id="email" placeholder="Email">
-    <select class="btn" id="payment-method">
-      <option value="efectivo">Efectivo</option>
-      <option value="tarjeta-debito">Tarjeta de Débito</option>
-      <option value="tarjeta-credito">Tarjeta de Crédito</option>
-    </select>
-    <button class="btn" onclick="checkout()">Finalizar Compra</button>
-     <!-- Elemento para el mensaje de agradecimiento (inicialmente oculto) -->
-  <div id="thank-you-message" style="display: none;">
-    Muchas gracias por tu compra, nos estaremos comunicando contigo.
-  </div>
-  </div>
-</div>
+  <button class="btn" id="finalizar-compra-btn">Finalizar Compra</button>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <script src="sweetalert2.all.min.js"></script>
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
   <script src="./js/main.js"></script>
 </body>
